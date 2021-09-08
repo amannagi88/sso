@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Jul, 2021 12:17:02 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.so.pojo.SoDoctorHospitalAssociationPojo" table="so_doctor_hospital_association" >
+        <id name="pkId" type="long" column="pk_id" >
+            <generator class="native" />
+        </id>
+        <property name="hospitalId" column="hospital_id"/>
+        <property name="doctorId" column="doctor_id"/>
+        <property name="createAt" column="create_at"/>
+        <property name="updateAt" column="update_at"/>
+        <property name="createBy" column="create_by" />
+        <property name="updateBy" column="update_by" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.so.pojo.UserRegistration" table="so_user_registration">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="native" />
+        </id>
+        <property name="userName" type="string">
+            <column name="user_name" not-null="true" length="100"/>
+        </property>
+        <property name="userTypeId" type="int">
+            <column name="user_type_id" not-null="true" />
+        </property>
+        <property name="active" type="int">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_dt" not-null="true" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="update_dt" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

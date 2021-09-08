@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.so.pojo.RegPass" table="so_user_pwd">
+        <id name="pkId" type="java.lang.Integer">
+            <column name="pk_id" />
+            <generator class="native" />
+        </id>
+        <property name="registerId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+        <property name="currentEncrpPassword" type="binary">
+            <column name="pwd" />
+        </property>
+        <property name="currentEncrpSalt" type="binary">
+            <column name="salt" />
+        </property>        
+        <property name="dateCreated" type="timestamp">
+            <column name="create_dt" length="19" />
+        </property>
+        <property name="dateUpdated" type="timestamp">
+            <column name="update_dt" length="19" />
+        </property>        
+    </class>
+</hibernate-mapping>
