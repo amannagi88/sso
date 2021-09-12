@@ -61,11 +61,9 @@
                 parameter="Method"
                 validate="false"
                 scope="session">
-                <forward name="search" path="/JSP/Patient/DoctorSearch.jsp"/>     
-                <forward name="enquiry" path="/JSP/Patient/Inquiry.jsp"/>  
-                <forward name="doctor" path="/JSP/Patient/CreateDoctor.jsp"/>   
-                <forward name="searchResult" path="/JSP/Patient/SearchResult.jsp"/>    
-                <forward name="doctorDetails" path="/JSP/Patient/DoctorMoreDetails.jsp"/>                   
+                <forward name="search" path="/JSP/Services/DoctorSearch.jsp"/>                                    
+                <forward name="searchResult" path="/JSP/Services/SearchResult.jsp"/>    
+                <forward name="doctorDetails" path="/JSP/Services/DoctorMoreDetails.jsp"/>                   
                                        
         </action>
         
@@ -75,18 +73,17 @@
                 parameter="Method"
                 validate="false"
                 scope="session">
-                <forward name="enquiryhome" path="/JSP/Patient/Inquiry.jsp"/>                          
+                <forward name="enquiryhome" path="/JSP/Enquiry/Inquiry.jsp"/>                          
         </action>
+        
         <action path="/appointment" 
                 type="com.so.action.DoctorAppointmentViewAction"
                 name="regform"
                 parameter="Method"
                 validate="false"
                 scope="session">
-                <forward name="doctorappointmentview" path="/JSP/Patient/DoctorAppointmentView.jsp"/>
-                           
+                <forward name="doctorappointmentview" path="/JSP/Doctor/DoctorAppointmentView.jsp"/>                           
         </action>
-        
         
         <action path="/inquiryView" 
                 type="com.so.action.AdminInquiryViewAction"
@@ -94,12 +91,18 @@
                 parameter="Method"
                 validate="false"
                 scope="session">
-                <forward name="admininquiryview" path="/JSP/Patient/AdminInquiryView.jsp"/>
-                           
+                <forward name="admininquiryview" path="/JSP/Admin/AdminInquiryView.jsp"/>                           
         </action>
-        
-        
-        
+                
+         <action path="/doctor" 
+                type="com.so.action.DoctorAction"
+                name="serviceform"
+                parameter="Method"
+                validate="false"
+                scope="session">                
+                <forward name="doctor" path="/JSP/Doctor/CreateDoctor.jsp"/>                                                                
+        </action>
+                
          <action path="/admin" 
                 type="com.so.action.AdminAction"
                 name="regform"

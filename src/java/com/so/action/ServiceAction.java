@@ -62,16 +62,6 @@ public class ServiceAction extends DispatchAction {
         return mapping.findForward("enquiry");
     }
 
-    public ActionForward addDoctor(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) {
-        ServicesForm serviceForm = (ServicesForm) req.getSession(false).getAttribute("serviceform");
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return mapping.findForward("doctor");
-    }
-
     public ActionForward filter(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) {
         ServicesForm serviceForm = (ServicesForm) req.getSession(false).getAttribute("serviceform");
         ServicesDao serviceDao = new ServicesDao();
