@@ -98,6 +98,19 @@
                            
         </action>
         
+        
+        
+         <action path="/admin" 
+                type="com.so.action.AdminAction"
+                name="regform"
+                parameter="Method"
+                validate="false"
+                scope="session">
+                <forward name="dashboard" path="/JSP/Admin/AdminDashboard.jsp"/>
+                <forward name="label" path="/JSP/Admin/LabelSettings.jsp"/>
+                           
+        </action>
+        
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

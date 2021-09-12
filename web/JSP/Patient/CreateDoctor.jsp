@@ -13,29 +13,39 @@
 
 
 <html:html lang="true">
-    <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
-        <jsp:include page = "../../header.jsp" />   
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js/search.js" type="text/javascript"></script>
-
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <jsp:include page = "../Admin/AdminSidebar.jsp" /> 
+        <jsp:include page = "../Admin/AdminHeader.jsp" />   
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Add Doctor</title>
     </head>
     <script>
         var contextPath = '<%=request.getContextPath()%>';
     </script>    
 
-    <body >
-        <div class="container main_div">
-            <div class="row">
-                <h3 class="main_div_h "> Create Doctor</h3>
+    <style>
+        .basic_dtl{color: #fff !important;font-size: 16px;}
+        .basic_dtl:hover{text-decoration: none !important;}
+    </style>
+        <div class="container">
+            
+                <h3 class="main_div_h "> Add Doctor</h3>
+                
 
-                   <div class="col-md-12 " >
-                    <div class="panel">
-                        <div class="panel-heading"> <i class="fas fa-info-circle"></i> Basic Information </div>
-                        <div class="panel-body">
-
-                            <form>
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                  <a class="basic_dtl" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                       <i class="fas fa-info-circle"></i> Basic Information
+                               </a>
+                              </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <form>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="inputState">Designation</label>
@@ -99,18 +109,25 @@
 
 
                             </form>
-
+                                    
+                                </div>
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
 
-                 <div class="col-md-12 " >
-                    <div class="panel">
-                        <div class="panel-heading"><i class="fas fa-graduation-cap "></i> Qualification Detail </div>
-                        <div class="panel-body">
+               <div class="">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="#home">Qualification Detail</a></li>
+                      <li><a data-toggle="tab" href="#menu1">Hospital</a></li>
+                      <li><a data-toggle="tab" href="#menu2">Specialization</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="home" class="tab-pane fade in active">
+                        <div class="col-md-12 " >
 
                             <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_hospital"><i class="fas fa-folder-plus add_detail"></i></a>
+                                <a href="myModal" data-toggle="modal" data-target="#_hospital"><i class="fa fa-plus add_detail" aria-hidden="true"></i></a>
                                 <div class="modal" id="_hospital" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
                                         <div class="modal-content"  style="width:100% !important">
@@ -168,22 +185,14 @@
 
                                 </tbody>
                             </table>
-
-                        </div>
-                    </div>
-
-
-
                 </div>
-                <!--/col-->
-                
-                <div class="col-md-12 " >
-                    <div class="panel">
-                        <div class="panel-heading">  <i class="fas fa-hospital-alt"></i> Hospital </div>
-                        <div class="panel-body">
-
-                            <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_qual"><i class="fas fa-folder-plus add_detail"></i></a>
+                      </div>
+                      <div id="menu1" class="tab-pane fade">
+                        
+                        <div class="col-md-12 right">
+                                <a href="myModal" data-toggle="modal" data-target="#_qual">
+                                    <i class="fa fa-plus add_detail" aria-hidden="true"></i>
+                                </a>
                                 <div class="modal" id="_qual" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
                                         <div class="modal-content"  style="width:100% !important">
@@ -240,18 +249,12 @@
                                     </tr>
 
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 " >
-                    <div class="panel">
-                        <div class="panel-heading"> <i class="fas fa-user-md"></i> Specialization </div>
-                        <div class="panel-body">
-
-                            <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_special"><i class="fas fa-folder-plus add_detail"></i></a>
+                            </table>  
+                          
+                      </div>
+                      <div id="menu2" class="tab-pane fade">
+                          <div class="col-md-12 right">
+                                <a href="myModal" data-toggle="modal" data-target="#_special"><i class="fa fa-plus add_detail" aria-hidden="true"></i></a>
                                 <div class="modal" id="_special" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
                                         <div class="modal-content"  style="width:100% !important">
@@ -309,10 +312,17 @@
 
                                 </tbody>
                             </table>
-
-                        </div>
+                      </div>
+                      
                     </div>
+                    </div>
+
+                 
+                <!--/col-->
+                
                
+                <div class="col-md-12 " >
+                   
                 
                     <div class="panel_btn">
                         <button type="button" class="btn_login">Save</button>
@@ -344,8 +354,7 @@
                   <!-- Chip DIv-->
 
            </div>
-        </div>
-    </body>
+
     <script>
         $(document).ready(function () {
             $(".btn").click(function () {
