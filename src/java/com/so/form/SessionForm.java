@@ -20,6 +20,7 @@ public class SessionForm extends ActionForm {
     private String userName;
     private int transactionId;
     private HashMap<Integer, List<Object>> userInfo;
+    private int dateProperty;
 
     public int getTransactionId() {
         return transactionId;
@@ -62,5 +63,13 @@ public class SessionForm extends ActionForm {
     public void setUserInfo(HashMap<Integer, List<Object>> userInfo) {
         this.userInfo = userInfo;
     }
+
+    public int getDateProperty() {
+        return dateProperty;
+    }
+
+    public void setDateProperty(int dateProperty) {
+        this.dateProperty = dateProperty;
+    }    
 
 }

@@ -31,6 +31,8 @@
         <form-bean name="regform" type="com.so.form.RegistrationForm"/>
         <form-bean name="serviceform" type="com.so.form.services.ServicesForm"/>
         <form-bean name="inquiryForm" type="com.so.form.enquiry.InquiryForm"/>
+        <form-bean name="sessForm" type="com.so.form.SessionForm"/>
+        <form-bean name="doctorForm" type="com.so.form.doctor.DoctorForm"/>
     </form-beans>
     
     <global-exceptions>

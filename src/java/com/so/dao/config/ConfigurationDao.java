@@ -6,11 +6,14 @@
 package com.so.dao.config;
 
 import com.so.beans.LicenseBean;
+import com.so.pojo.doctor.SoDoctorFieldsConfig;
 import com.so.util.HiberCon;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.type.StandardBasicTypes;
 
 /**
@@ -21,7 +24,7 @@ public class ConfigurationDao {
 
     private final SessionFactory fac = HiberCon.getSessionFactory();
 
-    public List getConfigurationByClientId(String type, int clientId, String fetch, String dummy2) {
+    public List getConfiguration(String type, String fetch, String dummy2) {
         Session sess = fac.openSession();
         List l2 = new ArrayList();
         List l1 = null;
@@ -61,8 +64,7 @@ public class ConfigurationDao {
                     .addScalar("order_no", StandardBasicTypes.DOUBLE)//8
                     .addScalar("encEligible", StandardBasicTypes.INTEGER)//9//field 1 is as enc applicable in user and in customer for sections
                     .addScalar("maxOrder", StandardBasicTypes.INTEGER)//10
-                    .addScalar("saved", StandardBasicTypes.INTEGER)//11
-                    .setInteger("clientId", clientId)
+                    .addScalar("saved", StandardBasicTypes.INTEGER)//11                   
                     .list();
             if (l1 != null && l1.size() > 0) {
                 for (int i = 0; i < l1.size(); i++) {
@@ -97,6 +99,85 @@ public class ConfigurationDao {
         }
 
         return l2;
+    }
+    
+    
+    public SoDoctorFieldsConfig getPojo(int clientId, int serialNo, String dummy2) {
+        Session sess = fac.openSession();
+        List l1 = null;
+        SoDoctorFieldsConfig bean = null;
+        try {
+            l1 = sess.createCriteria(SoDoctorFieldsConfig.class)                    
+                    .add(Restrictions.eq("serialNo", Double.parseDouble(serialNo + "")))
+                    .list();
+            if (l1 != null && l1.size() > 0) {
+                bean = (SoDoctorFieldsConfig) l1.get(0);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+            l1 = null;
+        }
+
+        return bean;
+    }
+    
+    public SoDoctorFieldsConfig getPojo(int pkId) {
+        Session sess = fac.openSession();
+        List l1 = null;
+        SoDoctorFieldsConfig bean = null;
+        try {
+            l1 = sess.createCriteria(SoDoctorFieldsConfig.class)
+                    .add(Restrictions.eq("pkId", pkId))
+                    .list();
+            if (l1 != null && l1.size() > 0) {
+                bean = (SoDoctorFieldsConfig) l1.get(0);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+            l1 = null;
+        }
+
+        return bean;
+    }
+
+    public int savePojo(SoDoctorFieldsConfig pojo) {
+        Session sess = fac.openSession();
+        Transaction tx = null;
+        try {
+            tx = sess.beginTransaction();
+            sess.save(pojo);
+            tx.commit();
+            return pojo.getPkId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            tx.rollback();
+            return 0;
+        } finally {
+            sess.close();
+        }
+
+    }
+
+    public int updatePojo(SoDoctorFieldsConfig pojo) {
+        Session sess = fac.openSession();
+        Transaction tx = null;
+        try {
+            tx = sess.beginTransaction();
+            sess.update(pojo);
+            tx.commit();
+            return pojo.getPkId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            tx.rollback();
+            return 0;
+        } finally {
+            sess.close();
+        }
+
     }
 
 }
