@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.so.pojo.doctor.SoDoctorFieldsConfig" table="so_doctor_config" >
+        <id name="pkId" type="int" column="PK_ID" >
+            <generator class="native" />
+        </id>
+        <property name="fieldType" column="FIELD_TYPE"/>
+        <property name="fieldName" column="FIELD_NAME"/>
+        <property name="fieldDesc" column="FIELD_DESC"/>
+        <property name="isMandatory" column="IS_MANDATORY"/>
+        <property name="isNameEditable" column="IS_NAME_EDITABLE"/>
+        <property name="isApplicable" column="IS_APPLICABLE"/>
+        <property name="isDisabled" column="IS_DISABLED"/>
+        <property name="serialNo" column="SERIAL_NO"/>
+        <property name="orderNo" column="ORDER_NO"/>       
+        <property name="createdDate" column="CREATED_DATE"/>
+        <property name="updatedDate" column="UPDATED_DATE"/>
+        <property name="createdBy" column="CREATED_BY" />
+        <property name="updatedBy" column="UPDATED_BY" />
+        <property name="field1" column="FIELD_1" />
+        <property name="field2" column="FIELD_2" />
+        <property name="field3" column="FIELD_3" />
+        <property name="field4" column="FIELD_4" />
+        <property name="field5" column="FIELD_5" />
+    </class>
+</hibernate-mapping>

@@ -5,8 +5,8 @@
  */
 package com.so.action;
 
-import com.so.dao.ServicesDao;
-import com.so.form.ServicesForm;
+import com.so.dao.services.ServicesDao;
+import com.so.form.services.ServicesForm;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;

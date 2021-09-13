@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 Mar, 2016 12:16:12 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.so.pojo.enquiry.SoInquiryPojo" table="so_hospital_inquiry_master" >
+        <id name="inquiryId" type="long" column="inquiry_id" >
+            <generator class="native" />
+        </id>
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name"/>
+        <property name="emailId" column="email_id"/>
+        <property name="mobile" column="mobile"/>
+        <property name="address" column="address"/>
+        <property name="pincode" column="pincode"/>
+        
+        <property name="description" column="description"/>
+        <property name="purpose" column="purpose"/>
+     
+        <property name="createAt" column="create_at"/>
+        <property name="updateAt" column="update_at"/>
+        <property name="createBy" column="create_by" />
+        <property name="updateBy" column="update_by" />
+          
+    </class>
+</hibernate-mapping>

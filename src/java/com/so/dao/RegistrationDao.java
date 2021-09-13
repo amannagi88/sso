@@ -8,7 +8,7 @@ package com.so.dao;
 
 import com.so.pojo.RegPass;
 import com.so.util.HiberCon;
-import com.so.pojo.SoPatientMasterPojo;
+import com.so.pojo.patient.SoPatientMasterPojo;
 import com.so.pojo.UserRegistration;
 import java.sql.Timestamp;
 import java.util.List;

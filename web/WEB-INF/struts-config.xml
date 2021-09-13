@@ -29,8 +29,8 @@
 <struts-config>
     <form-beans>
         <form-bean name="regform" type="com.so.form.RegistrationForm"/>
-        <form-bean name="serviceform" type="com.so.form.ServicesForm"/>
-        <form-bean name="inquiryForm" type="com.so.form.InquiryForm"/>
+        <form-bean name="serviceform" type="com.so.form.services.ServicesForm"/>
+        <form-bean name="inquiryForm" type="com.so.form.enquiry.InquiryForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -56,7 +56,7 @@
         </action>
         
         <action path="/service" 
-                type="com.so.action.ServiceAction"
+                type="com.so.action.service.ServiceAction"
                 name="serviceform"
                 parameter="Method"
                 validate="false"
@@ -68,7 +68,7 @@
         </action>
         
         <action path="/inquiry" 
-                type="com.so.action.InquiryAction"
+                type="com.so.action.enquiry.InquiryAction"
                 name="inquiryForm"
                 parameter="Method"
                 validate="false"
@@ -77,7 +77,7 @@
         </action>
         
         <action path="/appointment" 
-                type="com.so.action.DoctorAppointmentViewAction"
+                type="com.so.action.doctor.DoctorAppointmentViewAction"
                 name="regform"
                 parameter="Method"
                 validate="false"
@@ -86,7 +86,7 @@
         </action>
         
         <action path="/inquiryView" 
-                type="com.so.action.AdminInquiryViewAction"
+                type="com.so.action.admin.AdminInquiryViewAction"
                 name="regform"
                 parameter="Method"
                 validate="false"
@@ -95,7 +95,7 @@
         </action>
                 
          <action path="/doctor" 
-                type="com.so.action.DoctorAction"
+                type="com.so.action.doctor.DoctorAction"
                 name="serviceform"
                 parameter="Method"
                 validate="false"
@@ -104,7 +104,7 @@
         </action>
                 
          <action path="/admin" 
-                type="com.so.action.AdminAction"
+                type="com.so.action.admin.AdminAction"
                 name="regform"
                 parameter="Method"
                 validate="false"

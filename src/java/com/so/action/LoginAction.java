@@ -17,7 +17,7 @@ import org.apache.struts.actions.DispatchAction;
 
 import com.so.form.SessionForm;
 import com.so.pojo.RegPass;
-import com.so.pojo.SoPatientMasterPojo;
+import com.so.pojo.patient.SoPatientMasterPojo;
 import com.so.pojo.UserRegistration;
 import com.so.util.SecretAction;
 import java.sql.Timestamp;

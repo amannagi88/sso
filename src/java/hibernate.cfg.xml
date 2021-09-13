@@ -30,17 +30,18 @@
     <!--table mappings start-->
 
     <mapping resource="com/so/hbm/SoUserRegistration.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoPatientMaster.hbm.xml"/>
+    <mapping resource="com/so/hbm/patient/SoPatientMaster.hbm.xml"/>
     <mapping resource="com/so/hbm/RegPass.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoState.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoCity.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoAddressMaster.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoContactMaster.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoDoctorSpecialization.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoSpecializationMaster.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoInquiry.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoHospitalMaster.hbm.xml"/>
-    <mapping resource="com/so/hbm/SoDoctorHospitalAssociation.hbm.xml"/>
+    <mapping resource="com/so/hbm/admin/SoState.hbm.xml"/>
+    <mapping resource="com/so/hbm/admin/SoCity.hbm.xml"/>
+    <mapping resource="com/so/hbm/doctor/SoAddressMaster.hbm.xml"/>
+    <mapping resource="com/so/hbm/doctor/SoContactMaster.hbm.xml"/>
+    <mapping resource="com/so/hbm/doctor/SoDoctorSpecialization.hbm.xml"/>
+    <mapping resource="com/so/hbm/admin/SoSpecializationMaster.hbm.xml"/>
+    <mapping resource="com/so/hbm/enquiry/SoInquiry.hbm.xml"/>
+    <mapping resource="com/so/hbm/admin/SoHospitalMaster.hbm.xml"/>
+    <mapping resource="com/so/hbm/doctor/SoDoctorHospitalAssociation.hbm.xml"/>
+    <mapping resource="com/so/hbm/doctor/SoDoctorFieldsConfig.hbm.xml"/>
     
   </session-factory>
 </hibernate-configuration>
