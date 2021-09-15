@@ -6,15 +6,12 @@
 
 <!DOCTYPE html>
 <%@page import="java.util.List"%>
-<%@page import="com.so.pojo.SoSpecializationMasterPojo"%>
-<%@page import="com.so.form.ServicesForm"%>
+
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    ServicesForm serviceForm = (ServicesForm) request.getSession(false).getAttribute("serviceform");
-%>
+
 <!DOCTYPE html>
 <html>
     <link rel ="stylesheet" href="css/bootstrap.css" type="text/css" >

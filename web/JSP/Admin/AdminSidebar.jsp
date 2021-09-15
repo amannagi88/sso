@@ -5,8 +5,7 @@
 --%>
 <!DOCTYPE html>
 <%@page import="java.util.List"%>
-<%@page import="com.so.pojo.SoSpecializationMasterPojo"%>
-<%@page import="com.so.form.ServicesForm"%>
+
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -52,7 +51,7 @@
                 <hr class="sidebar-divider">
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <a class="nav-link collapsed" href="<%=request.getContextPath()%>/doctor.do?Method=addDoctor" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         <span>Add Doctor</span>
                     </a>
                     <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -80,7 +79,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    <a class="nav-link collapsed" href="<%=request.getContextPath()%>/admin.do?Method=labelSettings"  data-target="#collapseUtilities"
                        aria-expanded="true" aria-controls="collapseUtilities">
                         <span>Configuration</span>
                     </a>

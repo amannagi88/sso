@@ -47,8 +47,8 @@ public class ConfigurationDao {
             sql = "select lc.serial_no,lc.field_type,lc.field_name,\n"
                     + " lc.field_desc,lc.is_applicable,lc.is_disabled,\n"
                     + " lc.is_mandatory,lc.is_name_editable,lc.order_no,lc.field_1 as encEligible,"
-                    + " ifnull((select max(order_no) from " + table + " lc1 where lc1.client_id=lc.client_id and lc1." + active + "=1),0) as  maxOrder, "
-                    + " if(lc.client_id=0,0,1) as saved"
+                    + " ifnull((select max(order_no) from " + table + " lc1 where lc1." + active + "=1),0) as  maxOrder, "
+                    + " 0 as saved"
                     + " from " + table + " lc where lc." + active + "=1\n"
                     + " order by ifnull(lc.field_1,0),lc.order_no asc ";
             

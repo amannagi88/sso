@@ -5,8 +5,8 @@
 --%>
 <%@page import="com.so.util.FilterBean"%>
 <%@page import="java.util.List"%>
-<%@page import="com.so.pojo.SoSpecializationMasterPojo"%>
-<%@page import="com.so.form.ServicesForm"%>
+<%@page import="com.so.pojo.admin.SoSpecializationMasterPojo"%>
+<%@page import="com.so.form.services.ServicesForm"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
