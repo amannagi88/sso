@@ -15,20 +15,17 @@
 <html:html lang="true">
      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title> Add Doctor</title>
         <jsp:include page = "../Admin/AdminSidebar.jsp" /> 
         <jsp:include page = "../Admin/AdminHeader.jsp" />   
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Add Doctor</title>
+        
     </head>
+    
     <script>
         var contextPath = '<%=request.getContextPath()%>';
     </script>    
 
-    <style>
-        .basic_dtl{color: #fff !important;font-size: 16px;}
-        .basic_dtl:hover{text-decoration: none !important;}
-    </style>
+  
         <div class="container">
             
                 <h3 class="main_div_h "> Add Doctor</h3>
@@ -41,6 +38,9 @@
                                   <a class="basic_dtl" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                                        <i class="fas fa-info-circle"></i> Basic Information
                                </a>
+                                  <a class="basic_dtl" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                       <i class="fa fa-angle-down arr" aria-hidden="true"></i>
+                                  </a>
                               </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">
@@ -117,9 +117,9 @@
 
                <div class="">
                     <ul class="nav nav-tabs">
-                      <li class="active"><a data-toggle="tab" href="#home">Qualification Detail</a></li>
-                      <li><a data-toggle="tab" href="#menu1">Hospital</a></li>
-                      <li><a data-toggle="tab" href="#menu2">Specialization</a></li>
+                      <li class="active"><a data-toggle="tab" href="#home"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> Qualification Detail</a></li>
+                      <li><a data-toggle="tab" href="#menu1"><i class="fa fa-hospital-o" aria-hidden="true"></i> Hospital</a></li>
+                      <li><a data-toggle="tab" href="#menu2"><i class="fa fa-user-md" aria-hidden="true"></i> Specialization</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -127,7 +127,8 @@
                         <div class="col-md-12 " >
 
                             <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_hospital"><i class="fa fa-plus add_detail" aria-hidden="true"></i></a>
+                                <a href="myModal" data-toggle="modal" data-target="#_hospital" class="add_">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                                 <div class="modal" id="_hospital" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
                                         <div class="modal-content"  style="width:100% !important">
@@ -188,10 +189,10 @@
                 </div>
                       </div>
                       <div id="menu1" class="tab-pane fade">
-                        
+                       <div class="col-md-12"> 
                         <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_qual">
-                                    <i class="fa fa-plus add_detail" aria-hidden="true"></i>
+                                <a class="add_" href="myModal" data-toggle="modal" data-target="#_qual">
+                                  <i class="fa fa-plus-circle" aria-hidden="true"></i> 
                                 </a>
                                 <div class="modal" id="_qual" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
@@ -226,7 +227,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                        
                             </div>
 
                             <table class="table table-sm">
@@ -250,11 +251,14 @@
 
                                 </tbody>
                             </table>  
-                          
+                          </div>
                       </div>
                       <div id="menu2" class="tab-pane fade">
+                         <div class="col-md-12 "> 
                           <div class="col-md-12 right">
-                                <a href="myModal" data-toggle="modal" data-target="#_special"><i class="fa fa-plus add_detail" aria-hidden="true"></i></a>
+                                <a href="myModal" data-toggle="modal" data-target="#_special" class="add_">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
                                 <div class="modal" id="_special" tabindex="-1">
                                     <div class="modal-dialog" style="width:100% !important">
                                         <div class="modal-content"  style="width:100% !important">
@@ -290,7 +294,7 @@
                                 </div>
 
                             </div>
-
+                         
                             <table class="table table-sm">
                                 <thead>
                                     <tr>
@@ -313,7 +317,7 @@
                                 </tbody>
                             </table>
                       </div>
-                      
+                     </div> 
                     </div>
                     </div>
 
@@ -354,7 +358,11 @@
                   <!-- Chip DIv-->
 
            </div>
-
+</div>
+</div>
+</div>
+    
+    </body>
     <script>
         $(document).ready(function () {
             $(".btn").click(function () {
@@ -362,5 +370,6 @@
             });
         });
     </script>
+    
     <jsp:include page = "../../footer.jsp" />  
 </html:html>
