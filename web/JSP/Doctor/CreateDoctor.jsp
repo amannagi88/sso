@@ -15,7 +15,7 @@
 <html:html lang="true">
      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> SSO</title>
+        <title> SSO </title>
         <jsp:include page = "../Admin/AdminSidebar.jsp" /> 
         <jsp:include page = "../Admin/AdminHeader.jsp" />   
         
@@ -30,7 +30,62 @@
             
                 <h3 class="main_div_h "> Add Doctor</h3>
                 
-
+                <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl" class="doc_view d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " >View Doctor List</a>
+                   <!-- Extra large modal -->
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content view-list-popup">
+                            <div class="col-md-12">
+                                <h5 class="edit_">Doctor list</h5>
+                                
+                          <div class="responsive-table">
+                                   	<table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">DOB</th>
+                                              <th scope="col">Gender</th>
+                                              <th scope="col">State</th>
+                                              <th scope="col">City</th>
+                                              <th scope="col">Action</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td>Aarav</td>
+                                              <td>20 SEPT 1984</td>
+                                              <td>Male</td>
+                                              <td>Gujrat</td>
+                                              <td>Gandhi Nagar</td>
+                                              <td><i class="fa fa-edit" aria-hidden="true" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Aavya</td>
+                                              <td>20 SEPT 1984</td>
+                                              <td>Female</td>
+                                              <td>Himachal Pradesh</td>
+                                              <td>Solan</td>
+                                              <td><i class="fa fa-edit" aria-hidden="true" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i></td>
+                                            </tr>
+                                            <tr>
+				
+                                              <td>Samarth</td>
+                                              <td>20 SEPT 1984</td>
+                                              <td>Male</td>
+                                              <td>Punjab</td>
+                                              <td>Ludhiana</td>
+                                              <td><i class="fa fa-edit" aria-hidden="true" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></i></td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                
+                
                         <div class="panel-group" id="accordion">
                           <div class="panel panel-default">
                             <div class="panel-heading">
@@ -94,22 +149,61 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <label for="inputAddress">Address 4</label>
+                                        <label for="inputAddress">Address 1</label>
                                         <textarea type="text" class="form-control enqry_input" id="inputAddress" placeholder="Add1"></textarea>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="inputAddress2">Address 4</label>
-                                        <textarea type="text" class="form-control enqry_input" id="inputAddress2" placeholder="AAdd2"></textarea>
+                                        <label for="inputState">State</label>
+                                        <select id="inputState" class="form-control enqry_input">
+                                            <option selected>Andhra Pradesh</option>
+                                            <option selected>Arunachal Pradesh</option>
+                                           <option selected>Assam</option>
+                                        <option selected>Bihar</option>
+                                        <option selected>Chandigarh</option>
+                                        <option selected>Chhattisgarh</option>
+                                        <option selected>Delhi</option>
+                                        <option selected>Goa</option>
+                                        <option selected>Gujarat</option>
+                                        <option selected>Haryana</option>
+                                        <option selected>Himachal Pradesh</option>
+                                        </select>
                                     </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">City</label>
+                                        <select id="inputState" class="form-control enqry_input">
+                                            <option selected>Mumbai</option>
+                                            <option selected>Delhi</option>
+                                            <option selected>Bangalore</option>
+                                            <option selected>Hyderabad</option>
+                                            <option selected>Ahmedabad</option>
+                                            <option selected>Chennai</option>
+                                            <option selected>Kolkata</option>
+                                            <option selected>Surat</option>
+                                            <option selected>Pune</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="">Pin code</label>
                                         <input type="text" class="form-control enqry_input" id="">
                                     </div> 
+                                    <div class="form-group col-md-4">
+                                           <label for="exampleFormControlFile1">Select Image</label>
+                                            <div class="custom-file mb-3">
+                                                <input type="file" class="custom-file-input" id="customFile" name="filename">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                              </div>
+                                    </div>
                                 </div>
-
-
                             </form>
-                                    
+                                  <script>
+                                    // Add the following code if you want the name of the file appear on select
+                                    $(".custom-file-input").on("change", function() {
+                                      var fileName = $(this).val().split("\\").pop();
+                                      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                                    });
+                                    </script>  
                                 </div>
                             </div>
                           </div>

@@ -17,7 +17,7 @@ a:hover{text-decoration:none;color:#000}
 .Register_head_text {    font-size: 24px !important;}
 .arr{    float: right;    margin: 6px;    font-size: 24px !important;}
 .add_{float:right;font-size: 30px;}
-
+.form-control-file, .form-control-range{    box-shadow: 1px 1px 4px #ccc;   background: #fff;}
 
 .progress{height:1.3rem}
 .progress-bar{background:#007bff}
@@ -452,6 +452,15 @@ tbody{box-shadow: 2px 3px 10px #dedddd}
     background-color: rgba(0,0,0,0.4);
     transition: all 5s ease-in-out; /* Black w/ opacity */
 }
+
+label{margin-bottom: 0.2px!important}
+.form-group{margin-bottom: 0.1rem !important;}
+
+.doc_view{    position: absolute;    top: 11%;    right: 2%;}
+.view-list-popup{width:100% !important;padding:2%}
+.edit_{width: 100%;text-align: center;padding: 0 0 1% 0%;color: #000;}
+
+
 
 .form-check-label {
     margin-bottom: -3% !important;
