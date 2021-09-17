@@ -11,7 +11,10 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<title> SSO</title>
+<head>
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/favicon.ico?v=1.1.1" type="image/x-icon">
+</head> 
 <!DOCTYPE html>
 <html>
     <link rel ="stylesheet" href="css/bootstrap.css" type="text/css" >

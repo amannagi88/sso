@@ -15,7 +15,7 @@
 <html:html lang="true">
      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Add Doctor</title>
+        <title> SSO</title>
         <jsp:include page = "../Admin/AdminSidebar.jsp" /> 
         <jsp:include page = "../Admin/AdminHeader.jsp" />   
         
