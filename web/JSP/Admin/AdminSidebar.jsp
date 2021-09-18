@@ -79,7 +79,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="<%=request.getContextPath()%>/admin.do?Method=labelSettings"  data-target="#collapseUtilities"
+                    <a class="nav-link collapsed" href="<%=request.getContextPath()%>/settings.do?Method=labelSettings"  data-target="#collapseUtilities"
                        aria-expanded="true" aria-controls="collapseUtilities">
                         <span>Configuration</span>
                     </a>
