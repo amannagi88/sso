@@ -70,7 +70,7 @@
                     <html:form action="/service.do?Method=search" method="post" styleId="form1">
                         <html:hidden property="serviceId" />   
                         <div class="">
-                            <div class=" col-md-12 text-center" style="margin:2% 0% 4% 0%">
+                            <div class=" col-md-12 text-center welcm_heading">
                                 <h3 class="section-heading ">Services we provide</h3>
                             </div>
                             <div class="row text-center">
