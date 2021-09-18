@@ -11,9 +11,9 @@
 <body>
 
     <!--Footer-->
-    <div class="">
+    <div class="foooter">
         <div class="row nfooter">
-            <div class="col-md-3 nfooter_d1" >
+            <div class="col-md-3 nfooter_d1 left" >
 
                 <h4 class="nfooter_h">Our Website</h4>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa-home" ></i> &nbsp;&nbsp;Home</a></p>
@@ -23,23 +23,20 @@
 
             </div>
 
-            <div class="col-md-3 nfooter_d3">
+            <div class="col-md-3 nfooter_d3 left">
                 <h4 class="nfooter_h">Quick Links</h4>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa fa-stethoscope" ></i>&nbsp; Cancer Treatment</a></p>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa fa-user-md" ></i>&nbsp; Typhoid Treatment</a></p>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa fa-plus-square" ></i>&nbsp; Covid Treatment</a></p>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa-hospital-o" ></i>&nbsp; Fat Reduction</a></p>
             </div>
-            <div class="col-md-3 nfooter_d3">
+            <div class="col-md-3 nfooter_d3 left">
                 <h4 class="nfooter_h">Head Office</h4>
                 <p class="nfooter_p"><a hre="#"><i class="fa fa-map-marker" ></i>&nbsp; Sector 32, IT Park, Noida</a></p>
-                <br />
                 <p class="nfooter_p"><a hre="#"><i class="fa fa-phone" ></i>&nbsp; 91-9988998800</a></p>
-                <br />
                 <p class="nfooter_p"><a hre="#"><i class="fa fa-telegram" ></i>&nbsp; support@sso.com</a></p>
-                <br />
-                <div class="nfooter_icon">
-                    <h4 class="nfooter_h"></h4>
+                <p class="nfooter_p"><a hre="#"><i class="fa fa-telegram" ></i>&nbsp; medical@sso.com</a></p>
+                <div class="col-md-12 nfooter_icon left">
                     <i class="fa fa-facebook-square nfooter_f_icon" ></i>
                     <i class="fa fa-twitter-square nfooter_f_icon" ></i>
                     <i class="fa fa-google-plus-square nfooter_f_icon"></i>
@@ -47,7 +44,8 @@
                     <i class="fa fa-youtube-square nfooter_f_icon" ></i>
                 </div>
             </div>
-            <div class="col-md-3 nfooter_d2">
+           
+            <div class="col-md-3 nfooter_d2 left">
 
                 <div id="map-container-google-1" class="z-depth-1-half map-container nfooter_map" >
                     <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
