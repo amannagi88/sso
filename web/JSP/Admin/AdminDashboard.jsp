@@ -13,7 +13,7 @@
         <jsp:include page = "../Admin/AdminSidebar.jsp" /> 
         <jsp:include page = "../Admin/AdminHeader.jsp" />   
     </head>
-
+<title> SSO</title>
     <!-- Begin Page Content -->
 <div class="container-fluid left">
 <div class="col-md-12 left">
