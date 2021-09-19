@@ -17,8 +17,11 @@
         </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+        <title> SSO</title>
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
 
-        <title>SSO</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel ="stylesheet" href="css/bootstrap.css" type="text/css" >
         <link rel ="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -62,15 +65,7 @@
                         <a href="<%=request.getContextPath()%>/service.do?Method=search">Search Doctor</a><!-- <i class="fas fa-boxes"></i>-->
                     </div>
                     
-                    <div class="dropdown_">
-                        <button class="dropbtn_">Login 
-                            <!-- <i class="fas fa-users"></i>-->
-                        </button>
-                        <div class="dropdown-content_">
-                            <a href="#">Patient Login <!--<i class="fas fa-book-medical"></i>--></a>
-                            <a href="#">Doctor Login <!--<i class="fas fa-user"></i>--></a>
-                        </div>
-                    </div> 
+                     
                 </div>
 
                 <!--modal ends-->
@@ -87,18 +82,62 @@
 
             </div>
         </div>
+        <div class="dropdown_ srch_log">
+            <div class="home_login_">
+                       <button type="button"  class="dropbtn_" data-toggle="modal"  data-target="#admin" > Admin Login </button>
+            </div>
+                        <div class="modal"  id="admin"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">>
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content admin_log">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true" class="admin_close">&times;</span>
+                              </button>
+                                <div class="col-sm-12 text-center regi_">
+                               <label for="" class="REG_heading">
+                                  <h4 class="Register_head_text">Admin Login</h4>
+                               </label>
+                                </div>
+                                <div class="modal-body">
+                                  
+                                    <div class="col-md-12 ">
+                                        <div class="form-group">
+                                            <label class="form_lbl"  for="firstName">Username <span style="color:red">*</span></label>
+                                            <input type="text" class="form-control enqry_input" id="inputPassword" placeholder="Enter username...">
+                                            <div id="first_name_error" class="validation-class"></div>
+                                       </div>
+                                        
+                                        <div class="form-group">
+                                                <label class="form_lbl"  for="lastName">Password</label>
+                                                <input type="password" class="form-control enqry_input" id="inputPassword" placeholder="Enter password...">
+                                                <div id="first_name_error" class="validation-class"></div>
+                                        </div>
+                                     
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-12">
+                                  <button type="button" class="regi_btn admin_btn">Login</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <!--<div class="dropdown-content_">
+                            <a href="#">Patient Login </a>
+                            <a href="#">Doctor Login </a>
+                        </div>-->
+                    </div>            
+                    
         <!--Search login bar-->
         <div class="search srch_log">
             <span class="srch_log_span">
                 <!--login btn-->
                 <div class="home_login">
-
-                    <button id="myBtn" class="btn_login">Signup</button>
+                     <button id="myBtn" class="btn_login">Signup</button>
                 </div>
                 <!-- The Modal -->
-                <div id="myModal" class="modal">
+                <div id="myModal" class="modal" >
                     <!-- Modal content -->
-                    <div class="modal-content ">
+                    <div class="modal-content " >
                         <div class="">
                             <span class="close srch_log_form">&times;</span>
                         </div>
