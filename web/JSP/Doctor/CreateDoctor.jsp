@@ -29,16 +29,22 @@
         <div class="container">
             
                 <h3 class="main_div_h "> Add Doctor</h3>
-                
+                <div class="col-md-3 doc_view">
                 <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl" class="doc_view d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " >View Doctor List</a>
-                   <!-- Extra large modal -->
+                </div>  
+                <!-- Extra large modal -->
                     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-xl">
                         <div class="modal-content view-list-popup">
                             <div class="col-md-12">
                                 <h5 class="edit_">Doctor list</h5>
-                                
-                          <div class="responsive-table">
+                                <div class="srch_doc" >
+                                <div class="col-md-3 left"><input type="text" class="form-control enqry_input" id="" placeholder="Search by Name"></div>
+                                <div class="col-md-4 left"><input type="text" class="form-control enqry_input" id="" placeholder="Search by City"></div>
+                                <div class="col-md-4 left"><input type="text" class="form-control enqry_input" id="" placeholder="Search by Hospital"></div>
+                                <div class="col-md-1 left"><button class="btn btn-primary"><i class="fa fa-search"></i></button></div>
+                                </div>
+                          <div class="responsive-table_">
                                    	<table class="table">
                                           <thead>
                                             <tr>
@@ -207,11 +213,23 @@
                                 </div>
                             </div>
                           </div>
-                        </div>
-
+                        
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                  <a class="basic_dtl" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                       <i class="fas fa-info-circle"></i> Other Detail
+                               </a>
+                                  <a class="basic_dtl" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                       <i class="fa fa-angle-down arr" aria-hidden="true"></i>
+                                  </a>
+                              </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse in">
+                                <div class="panel-body" style="padding: 0px;">
                <div class="">
                     <ul class="nav nav-tabs">
-                      <li class="active"><a data-toggle="tab" href="#home"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> Qualification Detail</a></li>
+                      <li class=""><a data-toggle="tab" href="#home"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> Qualification Detail</a></li>
                       <li><a data-toggle="tab" href="#menu1"><i class="fa fa-hospital-o" aria-hidden="true"></i> Hospital</a></li>
                       <li><a data-toggle="tab" href="#menu2"><i class="fa fa-user-md" aria-hidden="true"></i> Specialization</a></li>
                     </ul>
@@ -415,7 +433,10 @@
                     </div>
                     </div>
 
-                 
+                   </div>
+                            </div>
+                          </div>
+                        </div>
                 <!--/col-->
                 
                
