@@ -12,9 +12,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-
-        <title>Admin Sidebar</title>
+    <head>        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
               
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 

@@ -11,9 +11,8 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <!DOCTYPE html>
-<title> SSO</title>
 <html:html lang="true">
-     <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
         <jsp:include page = "../../header.jsp" />   
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

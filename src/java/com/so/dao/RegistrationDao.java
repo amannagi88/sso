@@ -6,11 +6,14 @@
  */
 package com.so.dao;
 
+import com.so.form.SessionForm;
 import com.so.pojo.RegPass;
 import com.so.util.HiberCon;
 import com.so.pojo.patient.SoPatientMasterPojo;
 import com.so.pojo.UserRegistration;
+import com.so.util.SecretAction;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.hibernate.HibernateException;
@@ -72,15 +75,15 @@ public class RegistrationDao {
             //sess.save(cad);
             tx.commit();
         } catch (HibernateException e) {
-            if(tx!=null) tx.rollback();
+            if (tx != null) {
+                tx.rollback();
+            }
             e.printStackTrace();
         } finally {
             sess.close();
         }
         return apReg.getUserId();
     }
-
-    
 
     public String getUserName(String firstName, String lastName) {
         String query = "";
@@ -124,7 +127,6 @@ public class RegistrationDao {
         return true;
     }
 
-
     public boolean updatePojo(Object pojo) {
         Session sess = fac.openSession();
         try {
@@ -138,6 +140,57 @@ public class RegistrationDao {
             sess.close();
         }
         return true;
+    }
+
+    public int checkUserExists(HttpServletRequest req, SessionForm frm) {
+        String query = "";
+        Session sess = fac.openSession();
+        List lis = new ArrayList();
+        Object arr[] = null;       
+        try {
+            query = "SELECT a.user_name,a.user_id,"
+                    + " b.pwd,b.salt FROM"
+                    + " so_user_registration a,so_user_pwd b where a.user_name=:userName "
+                    + " and a.verified_status=1 and a.user_id=b.user_id"
+                    + "";
+            lis = sess.createSQLQuery(query)
+                    .setString("userName", frm.getUserName().trim())
+                    .list();
+            if (lis != null && lis.size() > 0) {//User Exists
+                arr = (Object[]) lis.get(0);
+                //Check Password validity
+                boolean valu = SecretAction.validatePassword(frm.getPassword().trim(), ((byte[]) arr[3]), ((byte[]) arr[2]));
+                if (valu) {
+                    return (Integer) arr[1];
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+        return 0;
+
+    }
+
+    //1 for login after registration ,2 for direct login
+    public void getUserAllDetails(HttpServletRequest req, String userName, SessionForm frm, int requestTypeForDetails, int userId) {
+        String query = "";
+        Session sess = fac.openSession();
+        List lis = new ArrayList();
+        Object arr[] = null;
+        try {
+            query = "SELECT user_name,user_id,last_logged_in_on,user_type_id FROM"
+                    + " so_user_registration where user_name=:userName and verified_status=1 ";
+            lis = sess.createSQLQuery(query).setString("userName", userName).list();
+            if (lis != null && lis.size() > 0) {
+                arr = (Object[]) lis.get(0);
+                frm.setUserId((Integer) arr[1]);
+                frm.setUserTypeId((Integer) arr[3]);
+                int updateVal = sess.createSQLQuery("update so_user_registration set last_logged_in_on=sysdate() where user_id=" + userId + ";").executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

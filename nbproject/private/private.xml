@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/HomeAction.java</file>
-            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/InquiryAction.java</file>
-            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/DoctorAppointmentViewAction.java</file>
-            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/AdminInquiryViewAction.java</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/JSP/Admin/newjsp.jsp</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/doctor/DoctorAction.java</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/form/SessionForm.java</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/JSP/Admin/LabelSettings.jsp</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/JSP/Enquiry/Inquiry.jsp</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/js/common/common_functions.js</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/JSP/Admin/AdminSidebar.jsp</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/js/admin/label_setting.js</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/web/WEB-INF/struts-config.xml</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/admin/Test.java</file>
+            <file>file:/C:/Users/Dell%20India/Documents/NetBeansProjects/Second%20Opinion/src/java/com/so/action/admin/AdminAction.java</file>
         </group>
     </open-files>
 </project-private>

@@ -104,3 +104,13 @@ function showToast(message) {
     $('.toast').toast('show');
 
 }
+
+function validate_admin(){
+    if($('.adm_usr').val()===''){
+        showToast('Please enter user name');       
+    }else if($('.adm_pass').val()===''){
+        showToast('Please enter password');
+    }else{
+        submitFormNormal(document.getElementById("loginForm"));
+    }
+}

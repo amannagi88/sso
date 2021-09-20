@@ -3,23 +3,24 @@
     Created on : 19-Jul-2021, 10:17:45 PM
     Author     : dev2
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
-
-
         <script src="js/_so__registration.js" type="text/javascript"></script>
         <script>
             var contextPath = '<%=request.getContextPath()%>';
         </script>
+        <script src="<%=request.getContextPath()%>/js/common/common_functions.js" type="text/javascript"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
+
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <title> SSO</title>
+        <title><bean:message key="welcome.title"/></title>
         <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -39,7 +40,7 @@
             <!--logo-->
             <div class="col-sm-4 logo_ background_head">
                 <!--<img class="logo_img" src="img/Logo_c.png" />
-<h3>SSO</h3>-->
+                <h3>SSO</h3>-->
             </div>      
             <style>
                 .nav_bar{width:17%;float: left;width: auto;float: left;margin-left: 2%;margin-right: 2%;}
@@ -49,28 +50,29 @@
                 .Register_head_text{font-size:30px;}
                 .REG_heading{margin:1% 0 6% 0;text-align: center;}
                 .mbl_info{margin: 0 0 6% 0}
-             </style>
+            </style>
             <!--navbar-->
             <div class="col-sm-8 right div_left_nav background_head"  id="header">           
                 <div class="navbar_" >
                     <div class="nav_bar_call" >
                         <a href="#"> <i class="fa fa-phone"></i> Call<span class="phn">+91-9988776655</span></a> 
                     </div>
-                    
+
                     <div class="nav_bar" >
                         <a href="<%=request.getContextPath()%>/Welcome.do">Home</a> <!--<i class="fas fa-home"></i>-->
                     </div>
-                    
+
                     <div class="nav_bar" >
                         <a href="<%=request.getContextPath()%>/service.do?Method=search">Search Doctor</a><!-- <i class="fas fa-boxes"></i>-->
                     </div>
-                    
-                     
+
+
                 </div>
 
                 <!--modal ends-->
             </div>
         </div>
+
         <div class="toast"  style="position: fixed;z-index: 100;right: 5%;top: 14%;">
             <div class="toast-header" style="background: #04AA6D ">
                 <strong class="mr-auto text-primary" style="font-size: 18px; color: #fff !important">Message</strong>
@@ -84,55 +86,63 @@
         </div>
         <div class="dropdown_ srch_log">
             <div class="home_login_">
-                       <button type="button"  class="dropbtn_" data-toggle="modal"  data-target="#admin" > Admin Login </button>
+                <button type="button"  class="dropbtn_" data-toggle="modal"  data-target="#admin" > Admin Login </button>
             </div>
-                        <div class="modal"  id="admin"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">>
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content admin_log">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true" class="admin_close">&times;</span>
-                              </button>
-                                <div class="col-sm-12 text-center regi_">
-                               <label for="" class="REG_heading">
-                                  <h4 class="Register_head_text">Admin Login</h4>
-                               </label>
-                                </div>
-                                <div class="modal-body">
-                                  
-                                    <div class="col-md-12 ">
-                                        <div class="form-group">
-                                            <label class="form_lbl"  for="firstName">Username <span style="color:red">*</span></label>
-                                            <input type="text" class="form-control enqry_input" id="inputPassword" placeholder="Enter username...">
-                                            <div id="first_name_error" class="validation-class"></div>
-                                       </div>
-                                        
-                                        <div class="form-group">
-                                                <label class="form_lbl"  for="lastName">Password</label>
-                                                <input type="password" class="form-control enqry_input" id="inputPassword" placeholder="Enter password...">
-                                                <div id="first_name_error" class="validation-class"></div>
-                                        </div>
-                                     
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-md-12">
-                                  <button type="button" class="regi_btn admin_btn">Login</button>
-                                </div>
-                              </div>
+            <div class="modal"  id="admin"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">>
+                <div class="modal-dialog" role="document">
+                    <form id="loginForm" method="post" action="login.do?Method=loginN">
+                        <div class="modal-content admin_log">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="admin_close">&times;</span>
+                            </button>
+                            <div class="col-sm-12 text-center regi_">
+                                <label for="" class="REG_heading">
+                                    <h4 class="Register_head_text">Admin Login</h4>
+                                </label>
                             </div>
-                          </div>
-                        <!--<div class="dropdown-content_">
-                            <a href="#">Patient Login </a>
-                            <a href="#">Doctor Login </a>
-                        </div>-->
-                    </div>            
-                    
+                            <div class="modal-body">
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+                                        <label class="form_lbl" for="firstName">Username <span style="color:red">*</span></label>
+                                        <input type="text" name="userName" class="form-control enqry_input adm_usr" placeholder="Enter username...">
+                                        <div id="first_name_error" class="validation-class"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form_lbl"  for="lastName">Password</label>
+                                        <input type="password" name="password" class="form-control enqry_input adm_pass" placeholder="Enter password...">
+                                        <div id="first_name_error" class="validation-class"></div>
+                                    </div>
+                                     <logic:messagesPresent message="true">
+                        <html:messages id="message" property="message" message="true">
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <strong><bean:write name="message"/></strong>
+                            </div>
+                        </html:messages>
+                    </logic:messagesPresent>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" onclick="validate_admin()" class="regi_btn admin_btn">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--<div class="dropdown-content_">
+                <a href="#">Patient Login </a>
+                <a href="#">Doctor Login </a>
+            </div>-->
+        </div>            
+
         <!--Search login bar-->
         <div class="search srch_log">
             <span class="srch_log_span">
                 <!--login btn-->
                 <div class="home_login">
-                     <button id="myBtn" class="btn_login">Signup</button>
+                    <button id="myBtn" class="btn_login">Signup</button>
                 </div>
                 <!-- The Modal -->
                 <div id="myModal" class="modal" >

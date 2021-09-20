@@ -6,7 +6,9 @@
 package com.so.dao.config;
 
 import com.so.beans.LicenseBean;
+import static com.so.dao.services.ServicesDao.checkListEmpty;
 import com.so.pojo.doctor.SoDoctorFieldsConfig;
+import com.so.util.FilterBean;
 import com.so.util.HiberCon;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,7 @@ public class ConfigurationDao {
         LicenseBean bean = null;
         //if clientId = 0 then fetch common set up else already done set up 
         try {
-            switch (type.toUpperCase()) {                
+            switch (type.toUpperCase()) {
                 case "DOC":
                     table = "so_doctor_config";
                     break;
@@ -51,7 +53,7 @@ public class ConfigurationDao {
                     + " 0 as saved"
                     + " from " + table + " lc where lc." + active + "=1\n"
                     + " order by ifnull(lc.field_1,0),lc.order_no asc ";
-            
+
             l1 = sess.createSQLQuery(sql)
                     .addScalar("serial_no", StandardBasicTypes.INTEGER)//0
                     .addScalar("field_type", StandardBasicTypes.INTEGER)//1
@@ -100,14 +102,13 @@ public class ConfigurationDao {
 
         return l2;
     }
-    
-    
+
     public SoDoctorFieldsConfig getPojo(int clientId, int serialNo, String dummy2) {
         Session sess = fac.openSession();
         List l1 = null;
         SoDoctorFieldsConfig bean = null;
         try {
-            l1 = sess.createCriteria(SoDoctorFieldsConfig.class)                    
+            l1 = sess.createCriteria(SoDoctorFieldsConfig.class)
                     .add(Restrictions.eq("serialNo", Double.parseDouble(serialNo + "")))
                     .list();
             if (l1 != null && l1.size() > 0) {
@@ -122,7 +123,7 @@ public class ConfigurationDao {
 
         return bean;
     }
-    
+
     public SoDoctorFieldsConfig getPojo(int pkId) {
         Session sess = fac.openSession();
         List l1 = null;
@@ -178,6 +179,28 @@ public class ConfigurationDao {
             sess.close();
         }
 
+    }
+
+    public int getDoctorsCount() {
+        Session sess = fac.openSession();
+        int count = 0;
+        try {
+            String query = "select count(*) as count1,sum(1) as count2 from so_doctor_master";
+
+            List existList = sess.createSQLQuery(query)
+                    .addScalar("count1", StandardBasicTypes.INTEGER)
+                    .addScalar("count2", StandardBasicTypes.INTEGER)
+                    .list();
+            if (checkListEmpty(existList)) {
+                Object[] arr = (Object[]) existList.get(0);
+                count = ((Integer) arr[0]);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sess.close();
+        }
+        return count;
     }
 
 }

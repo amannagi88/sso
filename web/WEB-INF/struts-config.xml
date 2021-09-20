@@ -32,7 +32,7 @@
         <form-bean name="serviceform" type="com.so.form.services.ServicesForm"/>
         <form-bean name="inquiryForm" type="com.so.form.enquiry.InquiryForm"/>
         <form-bean name="sessForm" type="com.so.form.SessionForm"/>
-        <form-bean name="doctorForm" type="com.so.form.doctor.DoctorForm"/>
+        <form-bean name="doctorForm" type="com.so.form.DoctorForm"/>
     </form-beans>
     
     <global-exceptions>
@@ -54,7 +54,10 @@
                 scope="session">
                 <forward name="medicalhistory" path="/JSP/Patient/MedicalHistory.jsp"/>
                 <forward name="timeline" path="/JSP/Patient/Timeline.jsp"/>
-                <forward name="home" path="/welcomeStruts.jsp"/>                
+                <forward name="timeline" path="/JSP/Patient/Timeline.jsp"/>
+                <forward name="home" path="/welcomeStruts.jsp"/>  
+                <forward name="FAILED" path="/welcomeStruts.jsp"/> 
+                <forward name="SUCCESS" path="/admin.do?Method=dashboard"/>                
         </action>
         
         <action path="/service" 
@@ -97,7 +100,7 @@
         </action>
                 
          <action path="/doctor" 
-                type="com.so.action.doctor.DoctorAction"
+                type="com.so.action.admin.AdminAction"
                 name="serviceform"
                 parameter="Method"
                 validate="false"
@@ -105,15 +108,23 @@
                 <forward name="doctor" path="/JSP/Doctor/CreateDoctor.jsp"/>                                                                
         </action>
                 
-         <action path="/admin" 
+        <action path="/admin" 
                 type="com.so.action.admin.AdminAction"
-                name="regform"
+                name="doctorForm"
                 parameter="Method"
                 validate="false"
                 scope="session">
-                <forward name="dashboard" path="/JSP/Admin/AdminDashboard.jsp"/>
-                <forward name="label" path="/JSP/Admin/LabelSettings.jsp"/>
-                           
+                <forward name="dashboard" path="/JSP/Admin/AdminDashboard.jsp"/>                                           
+        </action>
+        
+        <action path="/settings" 
+                type="com.so.action.admin.AdminAction"
+                name="doctorForm"
+                parameter="Method"
+                validate="false"
+                scope="session">                
+                <forward name="label" path="/JSP/Admin/LabelSettings.jsp"/>         
+                <forward name="doctorSettingSave" path="/settings.do?Method=labelSettings"/>                  
         </action>
         
     </action-mappings>

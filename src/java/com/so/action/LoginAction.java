@@ -24,9 +24,11 @@ import java.sql.Timestamp;
 import java.util.Collections;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 /**
  *
@@ -151,7 +153,7 @@ public class LoginAction extends DispatchAction {
 
             aur.setUserName(req.getAttribute("email").toString().trim());
 
-            apo.setFirstName(req.getAttribute("name").toString().trim());            
+            apo.setFirstName(req.getAttribute("name").toString().trim());
             apo.setLastName(req.getAttribute("name").toString().trim());
 
             byte[] arr = SecretAction.getSalt();
@@ -170,23 +172,57 @@ public class LoginAction extends DispatchAction {
 
         return null;
     }
-    
-    public ActionForward history(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) throws GoogleJsonResponseException {
-        SessionForm sessionForm= new SessionForm();
+
+    public ActionForward loginN(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) {
+        SessionForm sessionForm = new SessionForm();
+        RegistrationDao usDao = new RegistrationDao();
+        int err = 0;
         try {
 
-            
+            sessionForm.setUserName(req.getParameter("userName"));
+            sessionForm.setPassword(req.getParameter("password"));
+            int chkUserValid = usDao.checkUserExists(req, sessionForm);
+            if (chkUserValid > 0) {
+                usDao.getUserAllDetails(req, sessionForm.getUserName().trim(), sessionForm, 2, 0);
+                if (sessionForm.getUserId() > 0) {
+                    sessionForm.setUserId(sessionForm.getUserId());
+                    sessionForm.setUserTypeId(sessionForm.getUserTypeId());
+                    req.getSession(false).setAttribute("sessForm", sessionForm);
+                } else {
+                    err++;
+                    ActionErrors errors = new ActionErrors();
+                    errors.add("email1Err", new ActionMessage("err.pass1Req"));
+                }
+            } else {
+                //myForm.setIsPopUpOpen(1);
+                err++;
+                ActionErrors errors = new ActionErrors();
+                errors.add("email1Err", new ActionMessage("err.pass1Req"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (err == 1) {
+            return mapping.findForward("FAILED");        
+        } else {
+            return mapping.findForward("SUCCESS");
+        }
+    }
+
+    public ActionForward history(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) throws GoogleJsonResponseException {
+        SessionForm sessionForm = new SessionForm();
+        try {
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return mapping.findForward("medicalhistory");
     }
-    
+
     public ActionForward timeline(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res) throws GoogleJsonResponseException {
-        SessionForm sessionForm= new SessionForm();
+        SessionForm sessionForm = new SessionForm();
         try {
 
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,5 +230,3 @@ public class LoginAction extends DispatchAction {
     }
 
 }
-
-

@@ -3,7 +3,6 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<title> SSO</title>
     <meta name="google-signin-client_id" content="92588129338-curjkvtk8v283nmseug1kjjpddq4bqsi.apps.googleusercontent.com">
 
         <jsp:include page = "header.jsp" />    

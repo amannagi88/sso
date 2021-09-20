@@ -7,7 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <body>
 
     <!--Footer-->
@@ -57,7 +59,7 @@
             <div class="col-md-12 nfooter_d4">
                 <span class="right">Terms and Conditions | Privacy Policy</span>
 
-                <span class="left">All rights reserved 2021 &copy; SSO </span>
+                <span class="left">All rights reserved 2021 &copy; <bean:message key="welcome.title"/> </span>
             </div>
         </div>
     </div>

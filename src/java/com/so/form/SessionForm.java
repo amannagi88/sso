@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionForm;
 
 /**
  *
- * @author Promo Vision
+ * @author amanpreet.singh
  */
 public class SessionForm extends ActionForm {
 
@@ -19,6 +19,7 @@ public class SessionForm extends ActionForm {
     private int userTypeId;
     private String userName;
     private int transactionId;
+    private String password;
     private HashMap<Integer, List<Object>> userInfo;
     private int dateProperty;
 
@@ -70,6 +71,14 @@ public class SessionForm extends ActionForm {
 
     public void setDateProperty(int dateProperty) {
         this.dateProperty = dateProperty;
+    }    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }    
 
 }
